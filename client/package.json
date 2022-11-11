@@ -12,7 +12,9 @@
       "@types/react": "^17.0.15",
       "@types/react-dom": "^17.0.9",
       "animate.css": "^4.1.1",
+      "caniuse-lite": "^1.0.30001431",
       "classnames": "^2.3.1",
+      "i": "^0.3.7",
       "immutable": "^4.0.0-rc.14",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
@@ -25,7 +27,7 @@
       "web-vitals": "^1.1.2"
    },
    "scripts": {
-      "start": "react-scripts start",
+      "start": "SET PORT=3000 && react-scripts --openssl-legacy-provider start",
       "prod": "npm run build; python3 -m http.server --directory build --bind 127.0.0.1 3002",
       "server": "node -r dotenv server/index.ts",
       "build": "react-scripts build"
