@@ -35,24 +35,9 @@ export function KalimbaKey({
     // 1. The JSX refers to the HTML-looking syntax within TypeScript.
     // 2. The JSX will be **transpiled** into the corresponding `React.createElement` library call.
     // 3. The curly braces `{` and `}` should remind you of string interpolation.
-
-    <div
-      onMouseDown={() => synth?.triggerAttack(`${note}`)} // Question: what is `onMouseDown`?
-      onMouseUp={() => synth?.triggerRelease('+0.25')} // Question: what is `onMouseUp`?
-      className={classNames('ba pointer absolute dim', {
-        // 'bg-black black h3': minor, // minor keys are black
-        'bg-black white h3': minor, // minor keys are black
-        'black bg-white h4': !minor, // major keys are white
-      })}
-      style={{
-        // CSS
-        top: 0,
-        left: `${index * 2}rem`,
-        zIndex: minor ? 1 : 0,
-        width: minor ? '1.5rem' : '2rem',
-        marginLeft: minor ? '0.25rem' : 0,
-      }}
-    ></div>
+    <div>
+      <img src ={"./img/Kalimba.jpg"} alt="Kalimba" />
+    </div>
   );
 }
 
@@ -68,21 +53,9 @@ function KalimbaKeyWithoutJSX({
    * See `KalimbaKey` for the React component with JSX (JavaScript XML).
    */
   return React.createElement(
-    'div',
+    'img',
     {
-      onMouseDown: () => synth?.triggerAttack(`${note}`),
-      onMouseUp: () => synth?.triggerRelease('+0.25'),
-      className: classNames('ba pointer absolute dim', {
-        'bg-black black h3': minor,
-        'black bg-white h4': !minor,
-      }),
-      style: {
-        top: 0,
-        left: `${index * 2}rem`,
-        zIndex: minor ? 1 : 0,
-        width: minor ? '1.5rem' : '2rem',
-        marginLeft: minor ? '0.25rem' : 0,
-      },
+      src: "./img/Kalimba.jpg"
     },
     [],
   );
