@@ -5,8 +5,8 @@ import * as Tone from 'tone';
 import { Visualizer } from '../Visualizers';
 
 
-export const WaveformVisualizer = new Visualizer(
-  'Waveform',
+export const RainbowVisualizer = new Visualizer(
+  'Rainbow',
   (p5: P5, analyzer: Tone.Analyser) => {
     //Max color Combination = 16,581,375
     let colorCombination = 0; 
@@ -15,10 +15,23 @@ export const WaveformVisualizer = new Visualizer(
     const dim = Math.min(width, height);
 
     p5.background(0, 0, 0, 255);
-
     p5.strokeWeight(dim * 0.01);
     let relativeBlue = 255, relativeRed = 255, yellow = 255, brightness = 255;
-    p5.stroke(relativeBlue, relativeRed, yellow, brightness);
+    if(relativeBlue<0){                     relativeBlue = 255;}
+    if(relativeRed<0){                      relativeRed = 255;}
+    if(yellow<0){                           yellow = 255;}
+    switch(colorCombination%3){
+      case 0:
+        relativeBlue--;
+        break;
+      case 1:
+        relativeRed--;
+        break;
+      case 2:
+        yellow--;
+        break;
+    }
+    p5.stroke(relativeBlue--, relativeRed--, yellow--, brightness);
     p5.noFill();
 
     const values = analyzer.getValue();
