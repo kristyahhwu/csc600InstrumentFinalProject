@@ -1,6 +1,6 @@
 // 3rd party library imports
 import * as Tone from 'tone';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import { List, Range } from 'immutable';
 import React from 'react';
 import trumpet from '../img/trumpet.jpg'
