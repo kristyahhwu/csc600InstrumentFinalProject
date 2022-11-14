@@ -15,7 +15,7 @@ interface PianoKeyProps {
   note: string; // C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
   duration?: string;
   synth?: Tone.Synth; // Contains library code for making sound
-  minor?: boolean; // True if minor key, false if major key
+  label?: string; // True if minor key, false if major key
   octave: number;
   index: number; // octave + index together give a location for the piano key
 }
@@ -23,7 +23,7 @@ interface PianoKeyProps {
 export function PianoKey({
   note,
   synth,
-  minor,
+  label,
   index,
 }: PianoKeyProps): JSX.Element {
   /**
@@ -41,16 +41,21 @@ export function PianoKey({
       onMouseUp={() => synth?.triggerRelease('+0.25')} // Question: what is `onMouseUp`?
       className={classNames('ba pointer absolute dim', {
         // 'bg-black black h3': minor, // minor keys are black
-        'bg-black white h3': minor, // minor keys are black
-        'black bg-white h4': !minor, // major keys are white
+        'bg-black white h3': label, // minor keys are black
+        'black bg-white h4': !label, // major keys are white
       })}
       style={{
         // CSS
         top: 0,
         left: `${index * 2}rem`,
-        zIndex: minor ? 1 : 0,
-        width: minor ? '1.5rem' : '2rem',
-        marginLeft: minor ? '0.25rem' : 0,
+        zIndex: label ? 1 : 0,
+        width: label ? '4rem' : '4rem',
+        marginLeft: label ? '0.25rem' : 0,
+        height: 70,
+        padding:'1rem',
+        margin:'3rem',
+        borderRadius: 30,
+        borderColor:'red',
       }}
     ></div>
   );
@@ -60,7 +65,7 @@ export function PianoKey({
 function PianoKeyWithoutJSX({
   note,
   synth,
-  minor,
+  label,
   index,
 }: PianoKeyProps): JSX.Element {
   /**
@@ -73,21 +78,22 @@ function PianoKeyWithoutJSX({
       onMouseDown: () => synth?.triggerAttack(`${note}`),
       onMouseUp: () => synth?.triggerRelease('+0.25'),
       className: classNames('ba pointer absolute dim', {
-        'bg-black black h3': minor,
-        'black bg-white h4': !minor,
+        'bg-black black h3': label,
+        'black bg-white h4': !label,
       }),
       style: {
         top: 0,
         left: `${index * 2}rem`,
-        zIndex: minor ? 1 : 0,
-        width: minor ? '1.5rem' : '2rem',
-        marginLeft: minor ? '0.25rem' : 0,
+        zIndex: label ? 1 : 0,
+        width: label ? '1.5rem' : '2rem',
+        marginLeft: label ? '0.25rem' : 0,
       },
     },
     [],
   );
 }
 
+//wave types
 function PianoType({ title, onClick, active }: any): JSX.Element {
   return (
     <div
@@ -102,19 +108,14 @@ function PianoType({ title, onClick, active }: any): JSX.Element {
   );
 }
 
-function Piano({ synth, setSynth }: InstrumentProps): JSX.Element {
+function Drum({ synth, setSynth }: InstrumentProps): JSX.Element {
   const keys = List([
     { note: 'C', idx: 0 },
-    { note: 'Db', idx: 0.5 },
-    { note: 'D', idx: 1 },
-    { note: 'Eb', idx: 1.5 },
-    { note: 'E', idx: 2 },
-    { note: 'F', idx: 3 },
-    { note: 'Gb', idx: 3.5 },
-    { note: 'G', idx: 4 },
-    { note: 'Ab', idx: 4.5 },
-    { note: 'A', idx: 5 },
-    { note: 'Bb', idx: 5.5 },
+
+    { note: 'F', idx: 2 },
+
+    { note: 'B', idx: 4 },
+    
     { note: 'B', idx: 6 },
   ]);
 
@@ -146,16 +147,16 @@ function Piano({ synth, setSynth }: InstrumentProps): JSX.Element {
       <div className="relative dib h4 w-100 ml4">
         {Range(2, 7).map(octave =>
           keys.map(key => {
-            const isMinor = key.note.indexOf('b') !== -1;
+           
             const note = `${key.note}${octave}`;
             return (
               <PianoKey
                 key={note} //react key
                 note={note}
                 synth={synth}
-                minor={isMinor}
+               label = {key.note}
                 octave={octave}
-                index={(octave - 2) * 7 + key.idx}
+                index={ key.idx}
               />
             );
           }),
@@ -175,4 +176,4 @@ function Piano({ synth, setSynth }: InstrumentProps): JSX.Element {
   );
 }
 
-export const PianoInstrument = new Instrument('Piano', Piano);
+export const DrumInstrument = new Instrument('Drum', Drum);
