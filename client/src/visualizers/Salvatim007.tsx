@@ -7,7 +7,7 @@ import { Visualizer } from '../Visualizers';
 
 
 export const RandomVisualizer = new Visualizer(
-  'Waveform',
+  'Random',
   (p5: P5, analyzer: Tone.Analyser) => {
   },
 );
