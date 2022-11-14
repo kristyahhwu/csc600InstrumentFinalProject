@@ -6,6 +6,7 @@ import React from 'react';
 
 // project imports
 import { Instrument, InstrumentProps } from '../Instruments';
+import drums from '../img/drums.jpg'
 
 /** ------------------------------------------------------------------------ **
  * Contains implementation of components for Piano.
@@ -171,6 +172,7 @@ function Drum({ synth, setSynth }: InstrumentProps): JSX.Element {
             active={synth?.oscillator.type === o}
           />
         ))}
+        <img src = {drums} alt = "drums"></img>
       </div>
     </div>
   );
