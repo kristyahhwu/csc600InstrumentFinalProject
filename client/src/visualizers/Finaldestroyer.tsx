@@ -4,7 +4,6 @@ import * as Tone from 'tone';
 // project imports
 import { Visualizer } from '../Visualizers';
 
-
 export const FinaldestroyerVisualizer = new Visualizer(
   'Rainbow',
   (p5: P5, analyzer: Tone.Analyser) => {
