@@ -1,9 +1,8 @@
 // 3rd party library imports
 import * as Tone from 'tone';
-import classNames from 'classnames';
 import { List, Range } from 'immutable';
 import React from 'react';
-import Kalimba from '../img/Kalimba.jpg'
+import kalimba from '../img/Kalimba.jpg'
 
 
 // project imports
@@ -45,8 +44,8 @@ function Kalimba({ synth, setSynth }: InstrumentProps): JSX.Element {
     { note: 'E', idx: 16 },
   ]);
   return (
-    <div className = "instrument-Kalimba">Kalimba Instrument
-    <img src = {Kalimba} alt = "Kalimba"></img>
+    <div>
+    <img src = {kalimba} alt = "Kalimba"></img>
     </div>
 );
 }

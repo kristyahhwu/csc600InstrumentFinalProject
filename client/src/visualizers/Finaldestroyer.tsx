@@ -4,7 +4,7 @@ import * as Tone from 'tone';
 // project imports
 import { Visualizer } from '../Visualizers';
 
-export const FinaldestroyerVisualizer = new Visualizer(
+export const RainbowVisualizer = new Visualizer(
   'Rainbow',
   (p5: P5, analyzer: Tone.Analyser) => {
     //Max color Combination = 16,581,375
@@ -12,5 +12,7 @@ export const FinaldestroyerVisualizer = new Visualizer(
     const width = window.innerWidth;
     const height = window.innerHeight / 2;
     const dim = Math.min(width, height);
+    // ctx.strokeStyle = "#FF0000";
+    let relativeBlue = 255, relativeRed = 255, yellow = 255, brightness = 255;
   },
 );

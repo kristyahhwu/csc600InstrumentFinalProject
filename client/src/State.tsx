@@ -1,10 +1,10 @@
 // 3rd party
 import { List, Map } from 'immutable';
-import { KalimbaInstrument } from './instruments/Kalimba';
+import { KalimbaInstrument } from './instruments/Finaldestroyer';
 
 // project dependencies
 import { PianoInstrument } from './instruments/Piano';
-import { RainbowVisualizer } from './visualizers/Rainbow';
+import { RainbowVisualizer } from './visualizers/Finaldestroyer';
 import { WaveformVisualizer } from './visualizers/Waveform';
 
 
