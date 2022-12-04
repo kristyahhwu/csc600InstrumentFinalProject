@@ -2,7 +2,7 @@
 import * as Tone from 'tone';
 // import classNames from 'classnames';
 // import { List, Range } from 'immutable';
-// import React,{ useState, useEffect} from 'react';
+import React,{ useState, useEffect} from 'react';
 
 
 // project imports
@@ -21,12 +21,13 @@ import THead from "../img/THead.png";
  * Contains implementation of components for Trumpet.
  ** ------------------------------------------------------------------------ */
 
-
 function Trumpet(): JSX.Element {
+
     // store all the sound
     const sampler = new Tone.Sampler({
         urls:{
             C6: "TC6.mp3",
+            C4: "TC4.mp3",
             G3: "TG3.mp3",
             G5: "TG5.mp3",
         },
@@ -38,8 +39,8 @@ function Trumpet(): JSX.Element {
             <img
                 className="left"
                 onMouseDown={() => {
-                    sampler.triggerAttackRelease("C6", "10n");
-                    console.log("dont click")
+                    sampler.triggerAttackRelease("C4", "1n");
+                    console.log("left clicked")
                 }}
                 src={THead}
                 alt="left"
@@ -47,19 +48,20 @@ function Trumpet(): JSX.Element {
 
             <img
                 className="note-1"
-                onClick={() => {
-                    sampler.triggerAttackRelease("C6", "10n");
+                onMouseDown={() => {
+                    sampler.triggerAttackRelease("C6", "1n");
                     console.log("clicked 1st")
                 }}
                 src={T1}
                 alt="note-1"
             />
 
+            {/* Works note2 and 3 */}
             <img
                 className="note-2"
-                onClick={() => {
-                    sampler.triggerAttackRelease("G3", "10n");
-                    console.log("clicked 2nd")
+                onMouseDown={() => {
+                    sampler.triggerAttackRelease("G3", "3n");
+                    console.log("T2 clicked")
             }}
                 src={T2}
                 alt="note-2"
@@ -67,9 +69,9 @@ function Trumpet(): JSX.Element {
 
             <img
                 className="note-3"
-                onClick={() => {
-                    sampler.triggerAttackRelease("G5", "10n");
-                    console.log("clicked 3rd")
+                onMouseDown={() => {
+                    sampler.triggerAttackRelease("G5", "3n");
+                    console.log("T3 clicked")
                 }}
                 src={T3}
                 alt="note-3"
@@ -77,10 +79,6 @@ function Trumpet(): JSX.Element {
 
             <img
                 className="right"
-                onMouseDown={() => {
-                    sampler.triggerAttackRelease("C6", "10n");
-                    console.log("dont click")
-                }}
                 src={TEnd}
                 alt="right"
             />
