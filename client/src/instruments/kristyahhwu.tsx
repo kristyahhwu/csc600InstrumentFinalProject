@@ -1,7 +1,7 @@
 // 3rd party library imports
-import * as Tone from 'tone';
+// import * as Tone from 'tone';
 // import classNames from 'classnames';
-import { List, Range } from 'immutable';
+// import { List } from 'immutable';
 import React from 'react';
 import trumpet from '../img/trumpet.jpg'
 
@@ -11,16 +11,16 @@ import { Instrument, InstrumentProps } from '../Instruments';
 /** ------------------------------------------------------------------------ **
  * Contains implementation of components for Trumpet.
  ** ------------------------------------------------------------------------ */
-interface TrumpetKeyProps {
-    note: string; // C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
-    duration?: string;
-    synth?: Tone.Synth; // Contains library code for making sound
-    index: number; // octave + index together give a location for the piano key
-  }
+// interface TrumpetKeyProps {
+//     note: string; // C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
+//     duration?: string;
+//     synth?: Tone.Synth; // Contains library code for making sound
+//     index: number; // octave + index together give a location for the piano key
+//   }
 
 function Trumpet({ synth, setSynth }: InstrumentProps): JSX.Element {
-    const keys = List([
-    ]);   
+    // const keys = List([
+    // ]);   
         return (
             <div className = "instrument-trumpet">Hello Trumpet
             <img src = {trumpet} alt = "trumpet"></img>
