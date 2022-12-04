@@ -73,7 +73,7 @@ function PianoKeyWithoutJSX({
       onMouseDown: () => synth?.triggerAttack(`${note}`),
       onMouseUp: () => synth?.triggerRelease('+0.25'),
       className: classNames('ba pointer absolute dim', {
-        'bg-black black h3': minor,
+        'bg-black black h2': minor,
         'black bg-white h4': !minor,
       }),
       style: {
