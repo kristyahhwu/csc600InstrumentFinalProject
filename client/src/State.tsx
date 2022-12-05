@@ -13,6 +13,7 @@ import { RainbowVisualizer } from "./visualizers/Finaldestroyer";
 import { WaveformVisualizer } from "./visualizers/Waveform";
 import { StarVisualizer } from "./visualizers/kristyahhwu";
 import { histogramVisualizer } from "./visualizers/wanglovesym";
+import { ElectricVisualizer } from "./visualizers/Salvatim007";
 
 /** ------------------------------------------------------------------------ **
  * The entire application state is stored in AppState.
@@ -39,6 +40,7 @@ const visualizers = List([
 	StarVisualizer,
 	histogramVisualizer,
 	RainbowVisualizer,
+	ElectricVisualizer,
 ]); // similar to Visualizer[]
 
 /**
