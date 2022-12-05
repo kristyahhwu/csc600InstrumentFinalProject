@@ -1,5 +1,5 @@
 // 3rd party library imports
-import * as Tone from 'tone';
+// import * as Tone from 'tone';
 // import { Tone } from 'tone/build/esm/core/Tone';
 // import { List } from 'immutable';
 // import React from 'react';
@@ -30,7 +30,7 @@ import Kalimba_Key17_E3 from '../img/Kalimba/Kalimba_Key17_E3.jpg'
 
 // project imports
 import { Instrument, InstrumentProps } from '../Instruments';
-  
+
 /** ------------------------------------------------------------------------ **
  * Contains implementation of components for Kalimba.
  ** ------------------------------------------------------------------------ */
@@ -68,7 +68,7 @@ function Kalimba({ synth, setSynth }: InstrumentProps): JSX.Element {
   //   { note: 'E', idx: 16 },
   // ]);
   return (
-    <div>
+    <div id={'Kalimba_Keys'} style={{}}>
     {/* <img src = {kalimba} alt = "Kalimba" ></img> */}
     <img src = {Kalimba_Key1_D2} alt = "D2" onClick={()=>{       synth.triggerAttackRelease('D4',"8n")       }}></img>
     <img src = {Kalimba_Key2_B7} alt = "B7" onClick={()=>{       synth.triggerAttackRelease('B4',"8n")       }}></img>
@@ -91,6 +91,3 @@ function Kalimba({ synth, setSynth }: InstrumentProps): JSX.Element {
 );
 }
 export const KalimbaInstrument = new Instrument('Kalimba', Kalimba);
-
-
-//    <button name='E6'>
