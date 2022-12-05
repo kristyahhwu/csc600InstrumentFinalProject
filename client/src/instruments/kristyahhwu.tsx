@@ -60,7 +60,7 @@ function Trumpet(): JSX.Element {
             <img
                 className="note-2"
                 onMouseDown={() => {
-                    sampler.triggerAttackRelease("G3", "3n");
+                    sampler.triggerAttackRelease("G3", "1n");
                     console.log("T2 clicked")
             }}
                 src={T2}
@@ -70,7 +70,7 @@ function Trumpet(): JSX.Element {
             <img
                 className="note-3"
                 onMouseDown={() => {
-                    sampler.triggerAttackRelease("G5", "3n");
+                    sampler.triggerAttackRelease("G5", "1n");
                     console.log("T3 clicked")
                 }}
                 src={T3}

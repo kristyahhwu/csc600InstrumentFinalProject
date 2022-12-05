@@ -11,7 +11,7 @@ import { DrumInstrument } from './instruments/Salvatim007';
 import { RainbowVisualizer } from './visualizers/Finaldestroyer';
 import { WaveformVisualizer } from './visualizers/Waveform';
 import { TrumpetInstrument } from './instruments/kristyahhwu';
-import { HeartVisualizer } from './visualizers/heart';
+import { StarVisualizer } from './visualizers/kristyahhwu';
 import { histogramVisualizer } from './visualizers/wanglovesym';
 
 
@@ -30,7 +30,7 @@ const instruments = List([PianoInstrument, TrumpetInstrument, GuitarInstrument, 
  * Start with the default waveform visualizer.`
  * Add your visualizers to this list.
  */
-const visualizers = List([WaveformVisualizer, HeartVisualizer, histogramVisualizer, RainbowVisualizer]);    // similar to Visualizer[]
+const visualizers = List([WaveformVisualizer, StarVisualizer, histogramVisualizer, RainbowVisualizer]);    // similar to Visualizer[]
 
 
 /**
