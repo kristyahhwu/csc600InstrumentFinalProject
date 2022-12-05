@@ -29,7 +29,7 @@
    },
    "scripts": {
       "start": "SET PORT=3000 && react-scripts start",
-      "start_final":  "SET PORT=3000 && react-scripts --openssl-legacy-provider start",
+      "start_final": "SET PORT=3000 && react-scripts --openssl-legacy-provider start",
       "prod": "npm run build; python3 -m http.server --directory build --bind 127.0.0.1 3002",
       "server": "node -r dotenv server/index.ts",
       "build": "react-scripts build"
