@@ -25,7 +25,7 @@ function disconnectHandler(socket: Socket): (reason: string) => void {
  */
 function connectHandler(socket: Socket) {
    socket.once('disconnect', disconnectHandler(socket));
-   socket.onAny((event, msg) =>
+   socket.onAny((event: any, msg: any) =>
       console.debug(`${event}[${socket.id}]: ${JSON.stringify(msg)}`),
    );
    validMessages.forEach(handler => handler.attach(socket));
@@ -38,7 +38,7 @@ export async function initServer(): Promise<Server> {
 
    const server = new Server({
       path: WS_PATH,
-      serveClient: false,
+      serveClient: true,
       pingTimeout: PING_TIMEOUT_MS,
       pingInterval: PING_INTERVAL_MS,
       cors: {
