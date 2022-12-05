@@ -7,6 +7,12 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.drum_set {
+  background-color: rgb(228, 228, 228);
+  margin-left: 20%;
+
+}
+
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;

@@ -6,118 +6,57 @@ import React from 'react';
 
 // project imports
 import { Instrument, InstrumentProps } from '../Instruments';
-import drums from '../img/drums.jpg'
+//img
+import drum_img from '../img/drum_img.jpg';
 
 /** ------------------------------------------------------------------------ **
  * Contains implementation of components for Piano.
  ** ------------------------------------------------------------------------ */
 
-interface PianoKeyProps {
+interface TomDrumProps {
   note: string; // C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
   duration?: string;
   synth?: Tone.Synth; // Contains library code for making sound
-  label?: string; // True if minor key, false if major key
+  topDrum?: boolean;
   octave: number;
   index: number; // octave + index together give a location for the piano key
 }
-
-export function PianoKey({
+export function TomDrum({
   note,
   synth,
-  label,
+  topDrum,
   index,
-}: PianoKeyProps): JSX.Element {
-  /**
-   * This React component corresponds to either a major or minor key in the piano.
-   * See `PianoKeyWithoutJSX` for the React component without JSX.
-   */
+}: TomDrumProps): JSX.Element {
   return (
-    // Observations:
-    // 1. The JSX refers to the HTML-looking syntax within TypeScript.
-    // 2. The JSX will be **transpiled** into the corresponding `React.createElement` library call.
-    // 3. The curly braces `{` and `}` should remind you of string interpolation.
-
     <div
       onMouseDown={() => synth?.triggerAttack(`${note}`)} // Question: what is `onMouseDown`?
-      onMouseUp={() => synth?.triggerRelease('+0.25')} // Question: what is `onMouseUp`?
-      className={classNames('ba pointer absolute dim', {
+      onMouseUp={() => synth?.triggerRelease('+0.45')} // Question: what is `onMouseUp`?
+      className={classNames('ba pointer absolute dim gray', {
         // 'bg-black black h3': minor, // minor keys are black
-        'bg-black white h3': label, // minor keys are black
-        'black bg-white h4': !label, // major keys are white
+        'bg-black white h3': topDrum, // minor keys are black
+        'black bg-white h4 mt5': !topDrum, // major keys are white
       })}
       style={{
         // CSS
+        justifyContent: 'center',
         top: 0,
         left: `${index * 2}rem`,
-        zIndex: label ? 1 : 0,
-        width: label ? '4rem' : '4rem',
-        marginLeft: label ? '0.25rem' : 0,
-        height: 70,
-        padding:'1rem',
-        margin:'3rem',
-        borderRadius: 30,
-        borderColor:'red',
+        width: '6rem',
+        borderRadius:'50%',
+        height: '4rem',
+        marginTop: topDrum ? '6rem' : 0,
+        opacity:'10%',
       }}
     ></div>
   );
 }
 
-// eslint-disable-next-line
-function PianoKeyWithoutJSX({
-  note,
-  synth,
-  label,
-  index,
-}: PianoKeyProps): JSX.Element {
-  /**
-   * This React component for pedagogical purposes.
-   * See `PianoKey` for the React component with JSX (JavaScript XML).
-   */
-  return React.createElement(
-    'div',
-    {
-      onMouseDown: () => synth?.triggerAttack(`${note}`),
-      onMouseUp: () => synth?.triggerRelease('+0.25'),
-      className: classNames('ba pointer absolute dim', {
-        'bg-black black h3': label,
-        'black bg-white h4': !label,
-      }),
-      style: {
-        top: 0,
-        left: `${index * 2}rem`,
-        zIndex: label ? 1 : 0,
-        width: label ? '1.5rem' : '2rem',
-        marginLeft: label ? '0.25rem' : 0,
-      },
-    },
-    [],
-  );
-}
-
-//wave types
-function PianoType({ title, onClick, active }: any): JSX.Element {
-  return (
-    <div
-      onClick={onClick}
-      className={classNames('dim pointer ph2 pv1 ba mr2 br1 fw7 bw1', {
-        'b--black black': active,
-        'gray b--light-gray': !active,
-      })}
-    >
-      {title}
-    </div>
-  );
-}
-
 function Drum({ synth, setSynth }: InstrumentProps): JSX.Element {
   const keys = List([
-    { note: 'C', idx: 0 },
-
-    { note: 'F', idx: 2 },
-
-    { note: 'B', idx: 4 },
-    
-    { note: 'B', idx: 6 },
+    { note: '2G', idx: -4.5 ,octave: 2, topDrum: true},//BL
+    { note: '2D', idx: 2 ,octave: 3, topDrum: true},//BR
+    { note: '3D', idx: -3.5 ,octave: 2, topDrum: false},//TL
+    { note: '2B', idx: 1.25 ,octave: 2, topDrum: false},//TR
   ]);
 
   const setOscillator = (newType: Tone.ToneOscillatorType) => {
@@ -129,7 +68,6 @@ function Drum({ synth, setSynth }: InstrumentProps): JSX.Element {
       }).toDestination();
     });
   };
-
   const oscillators: List<OscillatorType> = List([
     'sine',
     'sawtooth',
@@ -144,37 +82,47 @@ function Drum({ synth, setSynth }: InstrumentProps): JSX.Element {
   ]) as List<OscillatorType>;
 
   return (
-    <div className="pv4">
-      <div className="relative dib h4 w-100 ml4">
-        {Range(2, 7).map(octave =>
+    <div className="flex-row" >
+      <div className="flex " style={{
+        
+      justifyContent: 'center',
+      }}>
+      <img src = {drum_img} alt = "drums" style={{
+      width: '30rem',
+      height: '12rem',
+      }}></img>
+      <div className="top_drums absolute">
+      {
           keys.map(key => {
-           
-            const note = `${key.note}${octave}`;
+            const isTopDrum = key.topDrum;
+            const note = `${key.note}${key.octave}`;
             return (
-              <PianoKey
+              <TomDrum
                 key={note} //react key
                 note={note}
                 synth={synth}
-               label = {key.note}
-                octave={octave}
-                index={ key.idx}
+                topDrum={isTopDrum}
+                octave={key.octave}
+                index={  key.idx}
               />
             );
-          }),
-        )}
+          })
+        }
+
       </div>
+      <div className="bottom_drums">
+
+      </div>
+
+
+      </div>
+
+
       <div className={'pl4 pt4 flex'}>
-        {oscillators.map(o => (
-          <PianoType
-            key={o}
-            title={o}
-            onClick={() => setOscillator(o)}
-            active={synth?.oscillator.type === o}
-          />
-        ))}
-        <img src = {drums} alt = "drums"></img>
       </div>
-    </div>
+
+    </div>//END
+    
   );
 }
 
