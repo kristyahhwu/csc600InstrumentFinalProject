@@ -70,30 +70,23 @@ function Kalimba({ synth, setSynth }: InstrumentProps): JSX.Element {
   return (
     <div>
     {/* <img src = {kalimba} alt = "Kalimba" ></img> */}
-    <img src = {Kalimba_Key1_D2} alt = "D2" ></img>
-    <img src = {Kalimba_Key2_B7} alt = "B7" ></img>
-    <img src = {Kalimba_Key3_G5} alt = "G5" ></img>
-    <img src = {Kalimba_Key4_E3} alt = "E3" ></img>
-    <img src = {Kalimba_Key5_C1} alt = "C1" ></img>
-    <img src = {Kalimba_Key6_A6} alt = "A6" ></img>
-    <img src = {Kalimba_Key7_F4} alt = "F4" ></img>
-    <img src = {Kalimba_Key8_D2} alt = "D2" ></img>
-    <img src = {Kalimba_Key9_C1} alt = "C1" ></img>
-    <img src = {Kalimba_Key10_E3} alt = "E3" ></img>
-    <img src = {Kalimba_Key11_G5} alt = "G5" ></img>
-    <img src = {Kalimba_Key12_B7} alt = "B7" ></img>
-    <img src = {Kalimba_Key13_D2} alt = "D2" ></img>
-    <img src = {Kalimba_Key14_F4} alt = "F4" ></img>
-    <img src = {Kalimba_Key15_A6} alt = "A6" ></img>
-    <img src = {Kalimba_Key16_C1} alt = "C1" onClick={
-                                                      ()=>{
-                                                      console.log('../Audio/KalimbaAudio/C6.wav');
-                                                      }}></img>
-    <img src = {Kalimba_Key17_E3} alt = "E3" onClick={()=>{
-                                                          // synth.triggerAttackRelease("E6","8n")
-                                                          const player = new Tone.Player("../Audio/KalimbaAudio/E6.wav").toDestination();
-                                                          player.autostart = true;
-                                                      }}></img>
+    <img src = {Kalimba_Key1_D2} alt = "D2" onClick={()=>{       synth.triggerAttackRelease('D4',"8n")       }}></img>
+    <img src = {Kalimba_Key2_B7} alt = "B7" onClick={()=>{       synth.triggerAttackRelease('B4',"8n")       }}></img>
+    <img src = {Kalimba_Key3_G5} alt = "G5" onClick={()=>{       synth.triggerAttackRelease('G4',"8n")       }}></img>
+    <img src = {Kalimba_Key4_E3} alt = "E3" onClick={()=>{       synth.triggerAttackRelease('E4',"8n")       }}></img>
+    <img src = {Kalimba_Key5_C1} alt = "C1" onClick={()=>{       synth.triggerAttackRelease('C4',"8n")       }}></img>
+    <img src = {Kalimba_Key6_A6} alt = "A6" onClick={()=>{       synth.triggerAttackRelease('A5',"8n")       }}></img>
+    <img src = {Kalimba_Key7_F4} alt = "F4" onClick={()=>{       synth.triggerAttackRelease('F5',"8n")       }}></img>
+    <img src = {Kalimba_Key8_D2} alt = "D2" onClick={()=>{       synth.triggerAttackRelease('D5',"8n")       }}></img>
+    <img src = {Kalimba_Key9_C1} alt = "C1" onClick={()=>{       synth.triggerAttackRelease('C5',"8n")       }}></img>
+    <img src = {Kalimba_Key10_E3} alt = "E3" onClick={()=>{       synth.triggerAttackRelease("E5","8n")       }}></img>
+    <img src = {Kalimba_Key11_G5} alt = "G5" onClick={()=>{       synth.triggerAttackRelease('G5',"8n")       }}></img>
+    <img src = {Kalimba_Key12_B7} alt = "B7" onClick={()=>{       synth.triggerAttackRelease('B5',"8n")       }}></img>
+    <img src = {Kalimba_Key13_D2} alt = "D2" onClick={()=>{       synth.triggerAttackRelease('D6',"8n")       }}></img>
+    <img src = {Kalimba_Key14_F4} alt = "F4" onClick={()=>{       synth.triggerAttackRelease('F6',"8n")       }}></img>
+    <img src = {Kalimba_Key15_A6} alt = "A6" onClick={()=>{       synth.triggerAttackRelease('A6',"8n")       }}></img>
+    <img src = {Kalimba_Key16_C1} alt = "C1" onClick={()=>{       synth.triggerAttackRelease('C6',"8n")       }}></img>
+    <img src = {Kalimba_Key17_E3} alt = "E3" onClick={()=>{       synth.triggerAttackRelease('E6',"8n")       }}></img>
     </div>
 );
 }
