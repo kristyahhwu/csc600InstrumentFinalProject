@@ -24,8 +24,8 @@ const Guitar: React.FC<InstrumentProps> = ({ synth, setSynth }): JSX.Element => 
     ]
 
     return (
-        <div>
-            <div style={{width: "100%"}}><img src={img_guitar_strings} style={{ maxHeight: "300px" }} /></div>
+        <div style={{height: "100%"}}>
+            <div style={{width: "100%"}}><img src={img_guitar_strings} style={{ maxHeight: "200px" }} /></div>
             {guitar_keys.map((item, index) => {
                 return (
                     <button

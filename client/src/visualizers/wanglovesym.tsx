@@ -20,19 +20,18 @@ export const histogramVisualizer = new Visualizer(
             p5.fill(p5.random(255), 80, 80);
             p5.ellipse(width / 2, height / 2, r, r)
 
-            p5.noFill();
-            p5.stroke(255, 80, 80, 60);
-            p5.strokeWeight(2);
-            for (let i = 0; i < level.length; i++) {
-                let angle = p5.map(i,0,1024,0,360);
-                let x = width/2 + Math.cos(angle) * 180;
-                let y = height/2 + Math.sin(angle) * 180;
-                let r = p5.map(level[i] as number,-0.8,0.8,50,220);
-                let x1 = width/2 + Math.cos(angle) * r;
-                let y1 = height/2 + Math.sin(angle) * r;
-                p5.line(x,y,x1,y1);
-            }
         }
-
+        p5.noFill();
+        p5.stroke(255, 80, 80, 60);
+        p5.strokeWeight(2);
+        for (let j = 0; j < level.length; j++) {
+            let angle = p5.map(j, 0, 1024, 0, 360);
+            let x = width / 2 + Math.cos(angle) * 180;
+            let y = height / 2 + Math.sin(angle) * 180;
+            let r = p5.map(level[j] as number, -0.8, 0.8, 50, 220);
+            let x1 = width / 2 + Math.cos(angle) * r;
+            let y1 = height / 2 + Math.sin(angle) * r;
+            p5.line(x, y, x1, y1);
+        }
     }
 )
