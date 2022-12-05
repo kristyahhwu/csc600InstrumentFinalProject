@@ -1,6 +1,7 @@
 // 3rd party library imports
 import P5 from 'p5';
 import * as Tone from 'tone';
+
 // project imports
 import { Visualizer } from '../Visualizers';
 
@@ -8,17 +9,14 @@ import { Visualizer } from '../Visualizers';
 export const WaveformVisualizer = new Visualizer(
   'Waveform',
   (p5: P5, analyzer: Tone.Analyser) => {
-    //Max color Combination = 16,581,375
-    let colorCombination = 0; 
     const width = window.innerWidth;
     const height = window.innerHeight / 2;
     const dim = Math.min(width, height);
 
-    p5.background(0, 0, 0, 255);
+    p5.background(0, 100, 0, 255);
 
     p5.strokeWeight(dim * 0.01);
-    let relativeBlue = 255, relativeRed = 255, yellow = 255, brightness = 255;
-    p5.stroke(relativeBlue, relativeRed, yellow, brightness);
+    p5.stroke(255, 255, 255, 255);
     p5.noFill();
 
     const values = analyzer.getValue();
@@ -31,6 +29,5 @@ export const WaveformVisualizer = new Visualizer(
       p5.vertex(x, y);
     }
     p5.endShape();
-    
   },
 );
