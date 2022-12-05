@@ -7,7 +7,7 @@ import { Visualizer } from "../Visualizers";
 
 /**
  * Yinyin Wu
- *
+ * github handle:
  */
 
 export const StarVisualizer = new Visualizer(
