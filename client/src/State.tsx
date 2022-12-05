@@ -12,7 +12,7 @@ import { TrumpetInstrument } from "./instruments/kristyahhwu";
 import { RainbowVisualizer } from "./visualizers/Finaldestroyer";
 import { WaveformVisualizer } from "./visualizers/Waveform";
 import { StarVisualizer } from "./visualizers/kristyahhwu";
-import { histogramVisualizer } from "./visualizers/wanglovesym";
+import { BoomVisualizer } from "./visualizers/wanglovesym";
 import { ElectricVisualizer } from "./visualizers/Salvatim007";
 
 /** ------------------------------------------------------------------------ **
@@ -38,7 +38,7 @@ const instruments = List([
 const visualizers = List([
 	WaveformVisualizer,
 	StarVisualizer,
-	histogramVisualizer,
+	BoomVisualizer,
 	RainbowVisualizer,
 	ElectricVisualizer,
 ]); // similar to Visualizer[]

@@ -6,7 +6,7 @@ import { StereoFeedbackEffect } from 'tone/build/esm/effect/StereoFeedbackEffect
 
 import { Visualizer } from '../Visualizers';
 
-export const histogramVisualizer = new Visualizer(
+export const BoomVisualizer = new Visualizer(
     'BOOM',
     (p5: P5, analyzer_tone: Tone.Analyser) => {
 
