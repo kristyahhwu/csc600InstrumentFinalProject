@@ -30,7 +30,7 @@ export function TomDrum({
   return (
     <div
       onMouseDown={() => synth?.triggerAttack(`${note}`)} // Question: what is `onMouseDown`?
-      onMouseUp={() => synth?.triggerRelease('+0.25')} // Question: what is `onMouseUp`?
+      onMouseUp={() => synth?.triggerRelease('+0.45')} // Question: what is `onMouseUp`?
       className={classNames('ba pointer absolute dim gray', {
         // 'bg-black black h3': minor, // minor keys are black
         'bg-black white h3': topDrum, // minor keys are black
@@ -54,7 +54,7 @@ export function TomDrum({
 function Drum({ synth, setSynth }: InstrumentProps): JSX.Element {
   const keys = List([
     { note: '2G', idx: -4.5 ,octave: 2, topDrum: true},//BL
-    { note: '2D', idx: 2 ,octave: 7, topDrum: true},//BR
+    { note: '2D', idx: 2 ,octave: 3, topDrum: true},//BR
     { note: '3D', idx: -3.5 ,octave: 2, topDrum: false},//TL
     { note: '2B', idx: 1.25 ,octave: 2, topDrum: false},//TR
   ]);
