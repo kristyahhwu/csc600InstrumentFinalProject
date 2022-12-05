@@ -1,0 +1,3 @@
+let elements = document.getElementsByClassName("pl4 pt4 flex");
+Idea: change frequency shape to circular
+Idea: wave constantly changing colorspace
