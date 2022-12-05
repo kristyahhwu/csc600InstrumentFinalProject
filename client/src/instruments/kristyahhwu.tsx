@@ -1,16 +1,8 @@
 // 3rd party library imports
-<<<<<<< HEAD
 import * as Tone from "tone";
 // import classNames from 'classnames';
 // import { List, Range } from 'immutable';
 // import React, { useState, useEffect } from "react";
-=======
-// import * as Tone from 'tone';
-// import classNames from 'classnames';
-// import { List } from 'immutable';
-import React from 'react';
-import trumpet from '../img/trumpet.jpg'
->>>>>>> origin/Japheth
 
 // project imports
 import { Instrument } from "../Instruments";
@@ -26,7 +18,6 @@ import THead from "../img/THead.png";
 /** ------------------------------------------------------------------------ **
  * Contains implementation of components for Trumpet.
  ** ------------------------------------------------------------------------ */
-<<<<<<< HEAD
 
 function Trumpet(): JSX.Element {
 	// store all the sound
@@ -86,23 +77,6 @@ function Trumpet(): JSX.Element {
 			<img className="right" src={TEnd} alt="right" />
 		</div>
 	);
-=======
-// interface TrumpetKeyProps {
-//     note: string; // C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
-//     duration?: string;
-//     synth?: Tone.Synth; // Contains library code for making sound
-//     index: number; // octave + index together give a location for the piano key
-//   }
-
-function Trumpet({ synth, setSynth }: InstrumentProps): JSX.Element {
-    // const keys = List([
-    // ]);   
-        return (
-            <div className = "instrument-trumpet">Hello Trumpet
-            <img src = {trumpet} alt = "trumpet"></img>
-            </div>
-        );
->>>>>>> origin/Japheth
 }
 
 export const TrumpetInstrument = new Instrument("Trumpet", Trumpet);
