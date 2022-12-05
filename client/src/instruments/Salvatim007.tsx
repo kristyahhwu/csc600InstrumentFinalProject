@@ -1,7 +1,13 @@
 // 3rd party library imports
+<<<<<<< HEAD
 import * as Tone from 'tone';
 import classNames from 'classnames';
 import { List, Range } from 'immutable';
+=======
+// import * as Tone from 'tone';
+// import classNames from 'classnames';
+// import { List } from 'immutable';
+>>>>>>> origin/Japheth
 import React from 'react';
 
 // project imports
@@ -12,6 +18,7 @@ import drums from '../img/drums.jpg'
  * Contains implementation of components for Piano.
  ** ------------------------------------------------------------------------ */
 
+<<<<<<< HEAD
 interface PianoKeyProps {
   note: string; // C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
   duration?: string;
@@ -60,6 +67,24 @@ export function PianoKey({
       }}
     ></div>
   );
+=======
+// interface DrumsKeyProps {
+//   note: string; // C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
+//   duration?: string;
+//   synth?: Tone.Synth; // Contains library code for making sound
+//   minor?: boolean; // True if minor key, false if major key
+//   octave: number;
+//   index: number; // octave + index together give a location for the piano key
+// }
+function Drums({ synth, setSynth }: InstrumentProps): JSX.Element {
+  // const keys = List([
+  // ]);   
+      return (
+        <div>
+          <img src = {drums} alt = "drums"></img>
+        </div>
+      );
+>>>>>>> origin/Japheth
 }
 
 // eslint-disable-next-line
