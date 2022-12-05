@@ -35,7 +35,7 @@ export const RainbowVisualizer = new Visualizer(
     // p5.beginShape();
       const amplitude = values[i] as number;
       const x = p5.map(i, 0, values.length - 1, 0, width);
-      const y = height / 2 + (amplitude/2) * height;
+      const y = height / 2 + (amplitude*(3/4)) * height;
       p5.rect(x,y+25,-Math.random()*18.75,-Math.random()*56.25);  
       p5.rect(x,y+25,x*6.25,y*18.75);
     }
