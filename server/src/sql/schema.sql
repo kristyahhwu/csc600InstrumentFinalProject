@@ -1,8 +1,13 @@
-CREATE TABLE songs (
-	id int NOT NULL PRIMARY KEY,
-	song_title text NOT NULL,
-	notes varchar NOT NULL
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "songs" (
+	"id"	int NOT NULL,
+	"song_title"	text NOT NULL,
+	"notes"	varchar NOT NULL,
+	PRIMARY KEY("id")
 );
-
-INSERT INTO songs (id, song_title, notes) 
-VALUES (1, 'Ode to Joy (Dubstep Remix)', 'E4 E4 F4 G4 G4 F4 E4 D4 C4 C4 D4 E4 E4 D4 D4');
+INSERT INTO "songs" VALUES (1,'Ode to Joy (Dubstep Remix)','E4 E4 F4 G4 G4 F4 E4 D4 C4 C4 D4 E4 E4 D4 D4');
+INSERT INTO "songs" VALUES (2,'Frosty The SnowMan','G4 E4 F4 G4 C4 B4 C4 D4 C4 B4 A4 G4 B4 C4 D4 C4 B4 A4 A4 G4 C4 E4 G4 A4 G4 F4 E4 F4 G4');
+INSERT INTO "songs" VALUES (3,'Jingle Bells','E4 E4 E4 E4 E4 E4 E4 G4 C4 D4 E4 F4 F4 F4 F4 F4 E4 E4 E4 E4 G4 G4 F4 D4 C4');
+INSERT INTO "songs" VALUES (4,'Lugia','E4 G4 F4.5 D4 E4 B4 E4 G4 F4.5 B4 E4 F4 B4 E5 D5 B5 G4 A4 E4 E4 B5 A5 D5 F4.5 E4 D4 E4');
+INSERT INTO "songs" VALUES (5,'Pokemon Theme','A4 A4 A4 A4 A4 G4 E4 C4 D4 A4 A4 G4 F4 G4 B4 B4 B4 B4 B4 A4 G4 F4 G4 A4 A4 G4 F4 A4 A4 C4 D4 B4 B4 C5 D4 D4 C5 A4 G4 F4 D4 D4 E5 F5 D5 C5 A4 C5 D5');
+COMMIT;
